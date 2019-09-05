@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<div>
   <head>
     <title>MusicApp</title>
     <%= csrf_meta_tags %>
@@ -9,13 +10,31 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<header class="logio">Music App
+<% if current_user %>
+  <form class="log" action="<%= session_url %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Logout">
+  </form>
+<% else %>
+  <form class="log" action="<%= new_session_url %>" method="GET">
+     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Login">
+  </form>
+<% end %> 
+</header>
+
   <body>
     <% if flash[:errors] %>
       <% flash[:errors].each do |error| %>
         <%= error %>
       <% end  %>
     <% end  %>
-    
+
     <%= yield %>
   </body>
+
+  <footer>coyright: PS</footer>
+  </div>
 </html>

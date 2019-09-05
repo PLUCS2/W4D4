@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     #debugger 
     if user 
-      # login!(user)
+      login!(user)
       redirect_to user_url(user)
     else 
       flash.now[:errors] = [ "that login information was incorrect" ]

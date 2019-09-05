@@ -1,9 +1,9 @@
 <!--User Homepage-->
 
 <h1>This is, <%= @user.email %></h1>
-  <form action="<%= session_url %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="submit" value="Logout">
-  </form>
 
+
+<form action="<%= bands_url %>" method="GET">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="See all bands"> 
+</form>
