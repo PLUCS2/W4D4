@@ -1,0 +1,13 @@
+<!-- login page -->
+
+<h1>Please Login!</h1>
+
+<form action="<%= session_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="email">Enter your email</label><br>
+    <input type="text" name="user[email]" id="email"><br>
+  <label for="password">Please enter a password</label><br>
+    <input type="password" name="user[password]" id="password"><br>
+  <input type="submit" value="SUBMIT">
+  
+</form>
