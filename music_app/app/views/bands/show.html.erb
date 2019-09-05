@@ -1,5 +1,9 @@
 <h1><%= @band.name %></h1>
 
+<% @band.albums.each do |album| %>
+  <h3><%= album.title %></h3>
+<% end %>
+
 <form action="<%= band_url %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

@@ -9,5 +9,6 @@
   <label for="live">Studio<input type="radio" name="album[recordings]" id="recordings" value="studio"></label><br>
   <label for="year">Album Year</label><br>
     <input type="integer" name="album[year]" id="year"><br>
+    <input type="hidden" name="album[band_id]" id="band_id" value="<%= params[:band_id] %>">
   <br><input type="submit" value="SUBMIT">
 </form>

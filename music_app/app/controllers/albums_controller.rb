@@ -8,7 +8,7 @@ class AlbumsController <ApplicationController
     @album = Album.new(album_params)
     
     if @album.save
-      flash[:errors] = ["#{@album.name} was added to the database"]
+      flash[:errors] = ["#{@album.title} was added to the database"]
       redirect_to band_url(@album.band_id)
     else 
       flash.now[:errors] =[ "Album was not added to the database" ]
@@ -61,7 +61,7 @@ class AlbumsController <ApplicationController
   private 
 
   def album_params 
-    params.require(:album).permit(:title, :band_id, :recordings, :year) 
+    params.require(:album).permit(:title, :band_id, :recordings, :year, :band_id) 
   end 
 
 end 
